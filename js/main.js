@@ -1,6 +1,5 @@
 const inputForm = document.querySelector('.form');
 const outputInfo = document.querySelector('.result');
-const TOKEN = '1043e80672fba9';
 
 inputForm.addEventListener('submit', async event => {
   event.preventDefault();
@@ -12,8 +11,8 @@ inputForm.addEventListener('submit', async event => {
   event.target.reset();
 });
 
-async function fetchData(ip, TOKEN) {
-  const request = await fetch(`https://ipinfo.io/${ip}json?token=${TOKEN}`);
+async function fetchData(ip) {
+  const request = await fetch(`vercel-api-proxy-six-fawn.vercel.app?${ip}`);
   const jsonResponse = await request.json();
   console.log(jsonResponse);
 
