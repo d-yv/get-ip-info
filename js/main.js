@@ -15,7 +15,7 @@ inputForm.addEventListener('submit', async event => {
 });
 
 async function fetchData(ip) {
-  const url = `https://vercel-api-proxy-six-fawn.vercel.app/api/proxy?q=${ip}`;
+  const url = `https://vercel-api-proxy-six-fawn.vercel.app/api/proxy?source=getip&q=${ip}`;
   const response = await fetch(url);
   const jsonResponse = await response.json();
   console.log(jsonResponse);
